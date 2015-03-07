@@ -1,5 +1,8 @@
 source 'https://ruby.taobao.org/'
 
+gem 'redcarpet'
+gem 'coderay'
+
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass', branch: 'v1.0beta'
 gem 'therubyracer'
 gem 'devise'

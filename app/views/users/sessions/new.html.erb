@@ -1,42 +1,52 @@
 
 
-<div class="ui two column centered grid">
-	<div class="column">
-	
-	
-		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-		<div class="ui form segment">
-			<div class="field">
-				<a class="ui teal ribbon label">登陆</a>
-			</div>
-			<div class="field">
-				<%= f.label :email%><br />
-				<%= f.email_field :email, autofocus: true, placeholder: '邮件' %>
-			</div>
-			<div class="field">
-				<%= f.label :password %><br />
-				<%= f.password_field :password, autocomplete: "off" %>
-			</div>
-			<% if devise_mapping.rememberable? -%>
-			<div class="inline field">
-		
-				<div class="ui slider checkbox">
-					<%= f.check_box :remember_me %>
-					<%= f.label :remember_me %>
-				</div>
-			</div>
-			<% end -%>
-			<%= f.submit "登陆", class: "ui submit button"%>
-		</div>
-		<% end %>
-	</div>
+<div class="ui two column grid">
+  <div class="twelve wide column"   >
+    <div class="ui form segment" style="margin: 0px">
+      <h3 class="ui dividing header"><i class="sign in icon"></i>登录
+      </h3>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div  id="login">
+            <div class=  "ui icon input field">
+              <div class="required field">
+                <%= f.label :email, "邮件" %>
+                <div class="ui icon input">
+                  <%= f.email_field :email, autofocus: true, placeholder: '邮件' %>
+                  <i class="mail icon"></i>
+                </div>
+              </div>
+            </div>
+            <div class= "ui icon input field">
+              <div class="required field">
+                <%= f.label :password, "密码" %>
+                <div class="ui icon input">
+                  <%= f.password_field :password, autocomplete: "off", placeholder: '密码' %>
+                  <i class="lock icon"></i>
+                </div>
+              </div>
+            </div>
+            <% if devise_mapping.rememberable? -%>
+                <div class="inline field">
+
+                  <div class="ui slider checkbox">
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :remember_me, "记住我"  %>
+                  </div>
+                </div>
+            <% end -%>
+          <%= f.submit "登陆", class: "ui primary button"%>
+
+      </div>
+
+        <% end %>
+      <h2 class="ui dividing header"></h2>
+    </div>
+
+  </div>
+
+  <div class="four wide column">
+    <%= render "users/shared/links" %>
+  </div>
 </div>
-<script type="text/javascript">
-$(document)
-.ready(function() {
-	$('.small.ui.modal')
-	//.modal('show')
-	;
-})
-;
-</script>
+
+
