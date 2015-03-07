@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OmniAuthDevise</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+</head>
+<body id="sink">
+
+
+	<div class="ui green secondary pointing menu" id="myHeader">
+		<a class="active item">
+			<i class="home icon"></i> Home
+		</a>
+		<a class="item">
+			<i class="mail icon"></i> Messages
+		</a>
+		<a class="item">
+			<i class="user icon"></i> Friends
+		</a>
+		<a class="red item">
+			Rails China
+		</a>
+		<div class="right menu">
+    
+			<% if user_signed_in? %>    
+			<a class="item">
+				欢迎你 <%= current_user.email %>    
+			</a>
+			<%= link_to "注销", destroy_user_session_path, method: :delete, class: "ui item"  %>    
+			<% else %>    
+			<%= link_to "Sign up", new_user_registration_path %> or    
+			<%= link_to "Sign in", new_user_session_path %>    
+			<% end %>   
+			<div class="item">
+				<div class="ui transparent icon input">
+					<input type="text" placeholder="Search...">
+					<i class="search link icon"></i>
+				</div>
+			</div> 
+		</div>
+  
+  
+	</div>
+
+
+	<div class="demo container">
+
+
+		
+
+
+		<%= yield %>
+
+	</div>
+</body>
+</html>

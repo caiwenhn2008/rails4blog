@@ -1,0 +1,42 @@
+
+
+<div class="ui two column centered grid">
+	<div class="column">
+	
+	
+		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+		<div class="ui form segment">
+			<div class="field">
+				<a class="ui teal ribbon label">登陆</a>
+			</div>
+			<div class="field">
+				<%= f.label :email%><br />
+				<%= f.email_field :email, autofocus: true, placeholder: '邮件' %>
+			</div>
+			<div class="field">
+				<%= f.label :password %><br />
+				<%= f.password_field :password, autocomplete: "off" %>
+			</div>
+			<% if devise_mapping.rememberable? -%>
+			<div class="inline field">
+		
+				<div class="ui slider checkbox">
+					<%= f.check_box :remember_me %>
+					<%= f.label :remember_me %>
+				</div>
+			</div>
+			<% end -%>
+			<%= f.submit "登陆", class: "ui submit button"%>
+		</div>
+		<% end %>
+	</div>
+</div>
+<script type="text/javascript">
+$(document)
+.ready(function() {
+	$('.small.ui.modal')
+	//.modal('show')
+	;
+})
+;
+</script>
