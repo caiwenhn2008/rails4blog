@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  layout 'blog'
+  layout 'blog',except: 'show'
 
   def index
     @articles = Article.all
