@@ -1,36 +1,59 @@
+
 <div class="ui two column grid">
-  <div class="twelve wide column"   >
-    <div class="ui form segment" style="margin: 0px">
-      <h3 class="ui dividing header"><i class="sign in icon"></i>文章列表
+  <div class="twelve wide column">
+    <div class="ui form segment">
+
+      <h3 class="ui  header"><i class="sign in icon"></i>文章列表
       </h3>
 
-      <div class="ui divided items">
+      <div class="ui large celled list">
         <% @articles.each do |article| %>
+            <div class="item">
+              <%= image_tag "matt.jpg", class:"ui avatar image" %>
+                <div class="content" >
+                <div class="header ui tag labels"><%= link_to article.title, article_path(article),class:"ui green",id: "myTitle" %>
+                  <a class="ui label">
+                    Rails
+                  </a>
+                </div>
 
-            <div class="link item">
+                <div class="content " style="margin-top: 10px">
+                  <div class="ui mini label">
+                    <i class="user icon"></i>
+                   Wilson
+                  </div>
 
-              <div class="ui tiny image">
-                <a class="ui teal ribbon label">精</a>
-                <%= image_tag "matt.jpg" %>
-
-              </div>
-              <div class="content">
-                <a class="header"><%= article.title %></a>
-                <div class="description">
-                  <!--<%= markdown(article.text.truncate(100).html_safe) %>-->
-                  <%= link_to '【阅读全文】', article_path(article) %>
+                  <div class="ui horizontal bulleted link list">
+                    <a class="item">
+                      <i class="clock icon"></i>13天前
+                    </a>
+                    <a class="item">
+                      最后由wilson回复于1天前
+                    </a>
+                  </div>
                 </div>
               </div>
+
+              <div  style="float: right">
+                <a class="ui red circular label">
+                  10
+                </a>
+              </div>
             </div>
-
         <% end %>
-
       </div>
 
     </div>
   </div>
 
   <div class="four wide column">
+    <div class="ui buttons">
+      <div class="ui button"> <%= link_to "发帖", new_article_path %></div>
+      <div class="or"></div>
+      <div class="ui positive button">浏览</div>
+    </div>
+
+
     <div class="ui vertical menu">
       <a class="active teal item">
         收件箱
