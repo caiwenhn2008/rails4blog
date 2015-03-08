@@ -1,13 +1,22 @@
 
 <div class="ui segment">
 
-  <div class="ui top green attached label">
-    <a class="ui red ribbon label">精</a>
-    <i class="file text icon"></i><%= @article.title %> <%= link_to '编辑', edit_article_path(@article) %>
-    <%= link_to '返回所有文章列表', articles_path %>
-    <%= link_to '删除', article_path(@article),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %>
+  <div class="ui top green attached label" style="font-size: large">
+    <i class="file text icon"></i><%= @article.title %>
+
+    <%= link_to articles_path do %>
+        <i class="reply all icon"></i>
+    <%end%>
+
+    <%= link_to edit_article_path(@article) do %>
+        <i class="edit icon"></i>
+    <%end%>
+
+    <%= link_to article_path(@article), method: :delete,
+                data: { confirm: 'Are you sure?' } do %>
+        <i class="remove icon"></i>
+    <%end%>
+
   </div>
 
   <div class="ui">
@@ -34,9 +43,11 @@
               <%= comment.body %>
             </div>
             <div class="actions">
-              <%= link_to '删除', [comment.article, comment],
-                          method: :delete,
-                          data: { confirm: 'Are you sure?' } %>
+              <%= link_to  [comment.article, comment],
+                           method: :delete,
+                           data: { confirm: 'Are you sure?' }  do %>
+                  <i class="remove icon"></i>删除
+              <%end%>
             </div>
           </div>
         </div>

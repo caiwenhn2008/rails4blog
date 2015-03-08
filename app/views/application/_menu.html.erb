@@ -7,9 +7,6 @@
     <a class="item">
       <i class="mail icon"></i> 站内消息
     </a>
-    <a class="item">
-      <i class="user icon"></i> 好友
-    </a>
     <a class="active green item">
       <i class="china flag"></i>Rails China
     </a>
@@ -27,7 +24,7 @@
 
       <% if user_signed_in? %>
           <a class="item">
-            欢迎你 <%= current_user.email %>
+            <i class="user icon"></i> 欢迎你 <%= current_user.email %>
           </a>
           <%= link_to  destroy_user_session_path, method: :delete, class: "ui item" do %>
               <i class="sign out icon"></i>注销
