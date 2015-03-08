@@ -1,3 +1,6 @@
+<%= link_to articles_path do %>
+    <i class="reply all icon"></i>返回文章列表
+<%end%>
 <%= form_for @article do |f| %>
     <% if @article.errors.any? %>
         <div id="error_explanation">
@@ -14,19 +17,17 @@
     <% end %>
 
     <p>
-      <%= f.label :title %><br>
+      <%= f.label :title, "标题" %><br>
       <%= f.text_field :title %>
     </p>
 
     <p>
-      <%= f.label :text %><br>
+      <%= f.label :text,"正文" %><br>
       <%= f.text_area :text %>
     </p>
 
     <p>
-      <%= f.submit %>
+      <%= f.submit "发布", class: "ui green button"%>
     </p>
 
 <% end %>
-
-<%= link_to 'Back', articles_path %>
