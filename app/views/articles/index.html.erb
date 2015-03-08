@@ -1,44 +1,42 @@
+<div class="ui segment">
+  <h3 class="ui  header"><i class="sign in icon"></i>文章列表
+  </h3>
 
+  <div class="ui large celled list">
+    <% @articles.each do |article| %>
+        <div class="item">
+          <%= image_tag "matt.jpg", class:"ui avatar image" %>
+          <div class="content" >
+            <div class="header ui tag labels"><%= link_to article.title, article_path(article),class:"ui green",id: "myTitle" %>
+              <a class="ui label">
+                Rails
+              </a>
+            </div>
 
-
-      <h3 class="ui  header"><i class="sign in icon"></i>文章列表
-      </h3>
-
-      <div class="ui large celled list">
-        <% @articles.each do |article| %>
-            <div class="item">
-              <%= image_tag "matt.jpg", class:"ui avatar image" %>
-                <div class="content" >
-                <div class="header ui tag labels"><%= link_to article.title, article_path(article),class:"ui green",id: "myTitle" %>
-                  <a class="ui label">
-                    Rails
-                  </a>
-                </div>
-
-                <div class="content " style="margin-top: 10px">
-                  <div class="ui mini label">
-                    <i class="user icon"></i>
-                   Wilson
-                  </div>
-
-                  <div class="ui horizontal bulleted link list">
-                    <a class="item">
-                      <i class="clock icon"></i>13天前
-                    </a>
-                    <a class="item">
-                      最后由wilson回复于1天前
-                    </a>
-                  </div>
-                </div>
+            <div class="content " style="margin-top: 10px">
+              <div class="ui mini label">
+                <i class="user icon"></i>
+                Wilson
               </div>
 
-              <div  style="float: right">
-                <a class="ui red circular label">
-                  10
+              <div class="ui horizontal bulleted link list">
+                <a class="item">
+                  <i class="clock icon"></i>13天前
+                </a>
+                <a class="item">
+                  最后由wilson回复于1天前
                 </a>
               </div>
             </div>
-        <% end %>
-      </div>
+          </div>
 
+          <div  style="float: right">
+            <a class="ui red circular label">
+              10
+            </a>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
 

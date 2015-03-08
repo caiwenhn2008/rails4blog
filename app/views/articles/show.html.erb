@@ -1,64 +1,56 @@
-<div class="ui two column grid">
-  <div class="twelve wide column"   >
 
+<div class="ui segment">
 
-    <div class="ui segment">
-
-      <div class="ui top attached label">
-        <a class="ui teal ribbon label">精</a>
-        <%= @article.title %> <%= link_to '编辑', edit_article_path(@article) %>
-        <%= link_to '删除', article_path(@article),
-                    method: :delete,
-                    data: { confirm: 'Are you sure?' } %>
-      </div>
-
-      <div class="ui">
-        <h3 class="ui dividing header"></h3>
-        <%= markdown(@article.text.html_safe) %>
-      </div>
-      <h3 class="ui dividing header"></h3>
-      <div class="ui bottom attached label"><%= link_to '返回所有文章列表', articles_path %>
-      </div>
-    </div>
-    <div class="ui form segment" style="margin: 0px">
-      <h3 class="ui dividing header"><i class="sign in icon"></i>共收到9条评论
-      </h3>
-
-      <div class="ui comments">
-        <% @article.comments.each do |comment| %>
-            <div class="comment">
-              <a class="avatar">
-                <%= image_tag "matt.jpg" %>
-              </a>
-              <div class="content">
-                <a class="author">  <%= comment.commenter %></a>
-                <div class="metadata">
-                  <span class="date">Today at 5:42PM</span>
-                </div>
-                <div class="text">
-                  <%= comment.body %>
-                </div>
-                <div class="actions">
-                  <%= link_to '删除', [comment.article, comment],
-                              method: :delete,
-                              data: { confirm: 'Are you sure?' } %>
-                </div>
-              </div>
-            </div>
-        <% end %>
-      </div>
-
-      <div>
-        <%= form_for([@article, @article.comments.build]) do |f| %>
-
-            <%= f.text_field :commenter %>
-            <%= f.text_area :body %>
-            <%= f.submit "回复", class: "ui primary button"%>
-        <% end %>
-      </div>
-
-
-
-    </div>
+  <div class="ui top attached label">
+    <a class="ui teal ribbon label">精</a>
+    <%= @article.title %> <%= link_to '编辑', edit_article_path(@article) %>
+    <%= link_to '返回所有文章列表', articles_path %>
+    <%= link_to '删除', article_path(@article),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
   </div>
+
+  <div class="ui">
+    <h3 class="ui dividing header"></h3>
+    <%= markdown(@article.text.html_safe) %>
+  </div>
+  <h3 class="ui dividing header"></h3>
+</div>
+
+<div class="ui form segment" style="margin: 0px">
+
+  <div class="ui comments">
+    <a class="ui ribbon label">共收到9条评论</a>
+    <% @article.comments.each do |comment| %>
+        <div class="comment">
+          <a class="avatar">
+            <%= image_tag "matt.jpg" %>
+          </a>
+          <div class="content">
+            <a class="author">  <%= comment.commenter %></a>
+            <div class="metadata">
+              <span class="date">Today at 5:42PM</span>
+            </div>
+            <div class="text">
+              <%= comment.body %>
+            </div>
+            <div class="actions">
+              <%= link_to '删除', [comment.article, comment],
+                          method: :delete,
+                          data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form_for([@article, @article.comments.build]) do |f| %>
+
+        <%= f.text_field :commenter %>
+        <%= f.text_area :body %>
+        <%= f.submit "回复", class: "ui primary button"%>
+    <% end %>
+  </div>
+
 </div>
