@@ -8,46 +8,7 @@
 </head>
 <body id="sink">
 
-<div class="ui pointing  large menu" id="myHeader">
-  <div id="mymenu">
-    <%= link_to  articles_path, class: "item" do %>
-        <i class="home icon"></i>首页
-    <%end%>
-    <a class="item">
-      <i class="mail icon"></i> 站内消息
-    </a>
-    <a class="item">
-      <i class="user icon"></i> 好友
-    </a>
-    <a class="active green item">
-      <i class="china flag"></i>Rails China
-    </a>
-
-
-
-    <div class="right menu">
-
-      <div class="item">
-        <div class="ui transparent icon input">
-          <input type="text" placeholder="搜素...">
-          <i class="search link icon"></i>
-        </div>
-      </div>
-
-      <% if user_signed_in? %>
-          <a class="item">
-            欢迎你 <%= current_user.email %>
-          </a>
-          <%= link_to "注销", destroy_user_session_path, method: :delete, class: "ui item"  %>
-      <% else %>
-          <%= link_to "注册", new_user_registration_path, class: "ui item"%>
-          <%= link_to "登陆", new_user_session_path, class: "ui item" %>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-
+<%= render(:partial=>'menu') %>
 
 <div class="demo container">
 
@@ -58,82 +19,13 @@
       </div>
     </div>
 
-    <div class="four wide column">
-      <div class="ui buttons">
-        <div class="ui button"> <%= link_to "发帖", new_article_path %></div>
-        <div class="or"></div>
-        <div class="ui positive button">浏览</div>
-      </div>
-
-
-      <div class="ui vertical menu">
-        <a class="active teal item">
-          收件箱
-          <div class="ui teal label">1</div>
-        </a>
-        <a class="item">
-          垃圾邮件
-          <div class="ui label">51</div>
-        </a>
-        <a class="item">
-          更新
-          <div class="ui label">1</div>
-        </a>
-        <div class="item">
-          <div class="ui transparent icon input">
-            <input type="text" placeholder="搜索邮件...">
-            <i class="search icon"></i>
-          </div>
-        </div>
-      </div>
-
-      <h3 class="ui dividing header"><i class="users icon"></i>关注
-      </h3>
-      <div class="ui divided list">
-        <div class="item">
-          <%= image_tag "matt.jpg", class: "ui  avatar image"%>
-          <div class="content">
-            <a class="header">王五</a>
-          </div>
-        </div>
-        <div class="item">
-          <%= image_tag "matt.jpg", class: "ui  avatar image"%>
-          <div class="content">
-            <a class="header">李四</a>
-          </div>
-        </div>
-        <div class="item">
-          <%= image_tag "matt.jpg", class: "ui  avatar image"%>
-          <div class="content">
-            <a class="header">张三</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
+    <%= render('rightPart') %>
   </div>
 
 </div>
 
 
+<%= render(:partial=>'footer') %>
 
-<div class="ui center aligned grid" style="margin-top: 100px">
-  <div class="column"   >
-    <p class="copyright">
-      Rails China 是中国 Rails 社区，由众多爱好者共同维护，致力于构建完善的 Rails 中文社区。 <div class="ui facebook button">
-    <i class="facebook icon"></i>
-    Facebook
-  </div>
-    <div class="ui twitter button">
-      <i class="twitter icon"></i>
-      Twitter
-    </div>
-    <div class="ui google plus button">
-      <i class="google plus icon"></i>
-      Google Plus
-    </div>
-    </p>
-  </div>
-</div>
 </body>
 </html>

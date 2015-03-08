@@ -1,0 +1,53 @@
+<div class="four wide column">
+  <div class="ui buttons">
+    <div class="ui button"> <%= link_to "发帖", new_article_path %></div>
+    <div class="or"></div>
+    <div class="ui positive button">浏览</div>
+  </div>
+
+
+  <div class="ui vertical menu">
+    <a class="active teal item">
+      收件箱
+      <div class="ui teal label">1</div>
+    </a>
+    <a class="item">
+      垃圾邮件
+      <div class="ui label">51</div>
+    </a>
+    <a class="item">
+      更新
+      <div class="ui label">1</div>
+    </a>
+    <div class="item">
+      <div class="ui transparent icon input">
+        <input type="text" placeholder="搜索邮件...">
+        <i class="search icon"></i>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="ui dividing header"><i class="users icon"></i>关注
+  </h3>
+  <div class="ui divided list">
+    <div class="item">
+      <%= image_tag "matt.jpg", class: "ui  avatar image"%>
+      <div class="content">
+        <a class="header">王五</a>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag "matt.jpg", class: "ui  avatar image"%>
+      <div class="content">
+        <a class="header">李四</a>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag "matt.jpg", class: "ui  avatar image"%>
+      <div class="content">
+        <a class="header">张三</a>
+      </div>
+    </div>
+
+  </div>
+</div>
