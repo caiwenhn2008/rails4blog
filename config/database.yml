@@ -23,6 +23,6 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: postgres://pjniofoebjxove:J-MAaX8WAJ2J3bjAOCCRuZ_Cdz@ec2-23-21-183-70.compute-1.amazonaws.com:5432/deplcub3r37f0r
+  database: postgres://inhgkzrprynkig:bQfprOWJiWwlPIZC5zS9OkKpte@ec2-107-20-244-39.compute-1.amazonaws.com:5432/dbkr96crvalmbq
   pool: 5
   timeout: 5000
