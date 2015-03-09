@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   layout 'blog'
 
   def index
-    @articles = Article.paginate(:page => params[:page], :per_page => 2).order(updated_at: :desc)
+    @articles = Article.paginate(:page => params[:page], :per_page => 10).order(updated_at: :desc)
   end
 
   def new
