@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OmniAuthDevise</title>
+  <title>Wilson's BLog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body id="sink">
 
-<%= render(:partial=>'menu') %>
+<%= render(:partial=>'header') %>
 
 <div class="demo container">
+  <%= render(:partial=>'menu') %>
   <%= yield %>
 </div>
 

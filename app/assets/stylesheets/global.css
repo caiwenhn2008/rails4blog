@@ -6,9 +6,23 @@
 /*--------------
       Demo
 ---------------*/
+html, body {
+    height: 100%;
+    font-size: 15px;
+}
+
+
+#sink ::-webkit-input-placeholder { color:#f00; }
+#sink ::-moz-placeholder { color:#f00; } /* firefox 19+ */
+#sink :-ms-input-placeholder { color:#f00; } /* ie */
+#sink input:-moz-placeholder { color:#f00; }
+#sink {
+    #background-color: #cce2ff;
+    #margin-top: 20px !important;
+}
+
 #mymenu {
-    margin-left: 250px;
-    margin-right: 250px;
+    margin-left: 450px;
 }
 
 pre {
@@ -26,7 +40,7 @@ pre {
     margin-right: 300px;
 }
 #myHeader {
-	background-color: #FFFFFF;
+	#background-color: #FFFFFF;
 }
 
 #sink {

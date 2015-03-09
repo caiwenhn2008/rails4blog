@@ -1,5 +1,9 @@
 <div class="ui segment">
-  <h3 class="ui  header"><i class="flag icon"></i>文章列表
+  <i class="flag icon"></i>文章列表
+</div>
+
+<div class="ui segment">
+  <h3 class="ui  header">
   </h3>
 
   <div class="ui celled list">
@@ -36,7 +40,17 @@
             </a>
           </div>
         </div>
+
+
     <% end %>
+
   </div>
+
+</div>
+
+
+<div class="ui segment">
+
+  <%= will_paginate @posts , :style => 'color:blue'%>
 </div>
 
