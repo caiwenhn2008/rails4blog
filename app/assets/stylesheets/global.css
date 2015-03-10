@@ -12,10 +12,10 @@ html, body {
 }
 
 
-#sink ::-webkit-input-placeholder { color:#f00; }
-#sink ::-moz-placeholder { color:#f00; } /* firefox 19+ */
-#sink :-ms-input-placeholder { color:#f00; } /* ie */
-#sink input:-moz-placeholder { color:#f00; }
+#sink ::-webkit-input-placeholder { color:#1b1c1d; }
+#sink ::-moz-placeholder { color:#1b1c1d; } /* firefox 19+ */
+#sink :-ms-input-placeholder { color:#1b1c1d; } /* ie */
+#sink input:-moz-placeholder { color:#1b1c1d; }
 #sink {
     #background-color: #cce2ff;
     #margin-top: 20px !important;
@@ -86,5 +86,5 @@ pre {
 }
 
 #myTitle {
-    color:#0069D6 !important;
+    color:#1b1c1d !important;
 }
