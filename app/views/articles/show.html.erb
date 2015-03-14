@@ -1,66 +1,52 @@
+<article class="article container well">
 
-<div class="ui segment">
+  <!-- 面包屑 -->
+  <div class="breadcrumb">
+    <i class="fa fa-hom		e"></i>
+    <!-- Breadcrumb NavXT 4.4.0 -->
+    <%= link_to  articles_path, class: "home" do %>
+        博客
+    <%end%>/
+    <%= @article.title %>
+  </div>
+  <!-- 面包屑结束 -->
 
-  <div class="ui top attached label" style="font-size: large">
-    <i class="file text icon"></i><%= @article.title %>
-
-    <%= link_to articles_path do %>
-        <i class="reply all icon"></i>
-    <%end%>
-
-    <%= link_to edit_article_path(@article) do %>
-        <i class="edit icon"></i>
-    <%end%>
-
-    <%= link_to article_path(@article), method: :delete,
-                data: { confirm: 'Are you sure?' } do %>
-        <i class="remove icon"></i>
-    <%end%>
-
+  <div class="hidden-xs">
+    <div class="title-article">
+      <h1>
+        <a href="#"><%= @article.title %></a>
+      </h1>
+    </div>
+    <div class="tag-article container">
+								<span class="label label-zan"><i class="fa fa-tags"></i>
+									9-21</span>
+    </div>
   </div>
 
-  <div class="ui">
-    <h3 class="ui dividing header"></h3>
-    <%= markdown(@article.text.html_safe) %>
+  <div class="centent-article">
+    <figure class="thumbnail hidden-xs"><img width="750" height="300" src="http://www.yeahzan.com/zanblog/wp-content/uploads/2013/09/car_6.jpg" class="attachment-full wp-post-image" alt="car_6"></figure>
+
+    <p> <%= markdown(@article.text.html_safe) %></p>
+    <!-- 分页 -->
+    <div class="zan-page bs-example">
+      <ul class="pager">
+        <li class="previous"><a href="http://www.yeahzan.com/zanblog/archives/531.html" rel="prev">上一篇</a></li>
+        <li class="next"><a href="http://www.yeahzan.com/zanblog/archives/575.html" rel="next">下一篇</a></li>
+      </ul>
+    </div>
+    <!-- 分页 -->
+
+    <!-- 文章版权信息 -->
+    <div class="copyright alert alert-success">
+      <p>
+        版权属于: <a href="http://www.yeahzan.com/zanblog">Wilson</a>
+      </p>
+      <p>
+        原文地址: <a href="#"><%= link_to @article.title, article_path(@article),id: "myTitle" %></a>
+      </p>
+      <p>转载时必须以链接形式注明原始出处及本声明。</p>
+    </div>
   </div>
-</div>
+</article>
 
-<div class="ui form segment" style="margin: 0px">
-
-  <div class="ui comments">
-    <a class="ui green ribbon label"><i class="comments icon"></i>共收到9条评论</a>
-    <% @article.comments.each do |comment| %>
-        <div class="comment">
-          <a class="avatar">
-            <%= image_tag "matt.jpg" %>
-          </a>
-          <div class="content">
-            <a class="author">  <%= comment.commenter %></a>
-            <div class="metadata">
-              <span class="date">Today at 5:42PM</span>
-            </div>
-            <div class="text">
-              <%= comment.body %>
-            </div>
-            <div class="actions">
-              <%= link_to  [comment.article, comment],
-                           method: :delete,
-                           data: { confirm: 'Are you sure?' }  do %>
-                  <i class="remove icon"></i>删除
-              <%end%>
-            </div>
-          </div>
-        </div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form_for([@article, @article.comments.build]) do |f| %>
-
-        <%= f.text_field :commenter %>
-        <%= f.text_area :body %>
-        <%= f.submit "回复", class: "ui green button"%>
-    <% end %>
-  </div>
-
-</div>
+<%= render(:partial=>'comments/comments') %>

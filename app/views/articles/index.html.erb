@@ -1,57 +1,79 @@
-
-<div class="ui segment">
-  <i class="flag icon"></i>文章列表
+<div class="well fade in">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  欢迎来到Wilson的个人博客 <i class="fa fa-smile-o"></i>
 </div>
 
-<div class="ui segment">
-  <h3 class="ui  header">
-  </h3>
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+  <!-- 轮播（Carousel）指标 -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <!-- 轮播（Carousel）项目 -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <%= image_tag("car_1.jpg", size: "750x300", alt: "car1", class:"attachment-full wp-post-image") %>
+    </div>
+    <div class="item">
+      <%= image_tag("car_2.jpg", size: "750x300", alt: "car2", class:"attachment-full wp-post-image") %>
+    </div>
+    <div class="item">
+      <%= image_tag("car_3.jpg", size: "750x300", alt: "car3", class:"attachment-full wp-post-image") %>
+    </div>
+  </div>
+  <!-- 轮播（Carousel）导航 -->
+  <a class="carousel-control left" href="#myCarousel"
+     data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel"
+     data-slide="next">&rsaquo;</a>
+</div>
 
-  <div class="ui celled list">
-    <% @articles.each do |article| %>
-        <div class="item">
-          <%= image_tag "matt.jpg", class:"ui avatar image" %>
-          <div class="content" >
-            <div class="header ui tag labels"><%= link_to article.title, article_path(article),class:"ui green",id: "myTitle" %>
-              <a class="ui label">
-                Rails
-              </a>
-            </div>
-
-            <div class="content " style="margin-top: 10px">
-              <div class="ui mini label">
-                <i class="user icon"></i>
-                Wilson
-              </div>
-
-              <div class="ui horizontal bulleted link list">
-                <a class="item">
-                  <i class="clock icon"></i>13天前
-                </a>
-                <a class="item">
-                  最后由wilson回复于1天前
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div  style="float: right">
-            <a class="ui red circular label">
-              10
-            </a>
-          </div>
+<% @articles.each do |article| %>
+    <div id="article-list">
+      <div class="article well clearfix">
+        <i class="fa fa-bookmark article-stick visible-md visible-lg"></i>
+        <div class="data-article hidden-xs">
+          <span class="month">9月</span> <span class="day">13</span>
         </div>
 
+        <section class="hidden-xs">
 
-    <% end %>
+          <div class="title-article">
+            <h1>
+              <%= link_to article.title, article_path(article),id: "myTitle" %>
+            </h1>
+          </div>
+          <div class="tag-article">
+									<span class="label label-zan"><i class="fa fa-tags"></i>
+										<a
+                                        href="#"
+                                        rel="category tag">rails</a></span> <span class="label label-zan"><i
+          class="fa fa-user"></i><i class="fa fa-eye"></i> 5,572</span>
+          </div>
 
-  </div>
+          <figure class="thumbnail hidden-xs"><img width="750" height="300" src="http://www.yeahzan.com/zanblog/wp-content/uploads/2013/09/car_6.jpg" class="attachment-full wp-post-image" alt="car_6"></figure>
 
+          <div class="content-article">
+              <blockquote>
+                <%= markdown(article.text.truncate(200).html_safe) %>
+              </blockquote>
+          </div>
+          <a class="btn btn-danger pull-right read-more"
+             href="#"
+             title="详细阅读 Zanblog 更新至V2.1.0">阅读全文 <span class="badge">6</span></a>
+        </section>
+
+      </div>
+
+    </div>
+    <!-- 内容主体结束 -->
+<% end %>
+<!-- 分页 -->
+
+<div id="zan-page" class="clearfix">
+  <ul class="pagination pagination-zan pull-right">
+    <%= will_paginate @articles , :style => 'color:blue'%>
+  </ul>
 </div>
-
-
-<div class="ui segment">
-
-  <%= will_paginate @posts , :style => 'color:blue'%>
-</div>
-
+<!-- 分页结束 -->

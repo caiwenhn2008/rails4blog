@@ -6,25 +6,90 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body id="sink">
-<%= render(:partial=>'menu') %>
+<body class="home blog nav-fixed">
 <%= render(:partial=>'header') %>
 
-<div class="demo container">
-  <%= render(:partial=>'menu') %>
 
-  <div class="ui two column grid">
-    <div class="twelve wide column">
-      <div class="ui form">
+<div id="zan-bodyer">
+  <div class="container">
+
+    <div class="row">
+      <div id="mainstay" class="col-md-8">
         <%= yield %>
       </div>
+
+      <aside class="col-md-4" id="sidebar">
+
+        <aside id="zan_search-2">
+          <div class="search">
+            <form class="form-inline clearfix" method="get" id="searchform"
+                  action="http://www.yeahzan.com/zanblog">
+              <input class="form-control" type="text" name="s" id="s"
+                     placeholder="搜索...">
+              <button type="submit" class="btn btn-danger btn-small"
+                      name="submit">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+          </div>
+        </aside>
+        <aside id="zan_hotest_posts-2">
+          <div class="panel panel-zan hot hidden-xs">
+            <div class="panel-heading">
+              <i class="fa fa-fire"></i> 最热文章 <i
+            class="fa fa-times-circle panel-remove"></i> <i
+            class="fa fa-chevron-circle-up panel-toggle"></i>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><span class="post-title">
+										<a href="#"
+                                           title="Zanblog 2.0.7（稳定版）更新"> Zanblog 2.0.7（稳定版）更新 </a>
+								</span> <span class="badge">29,716</span></li>
+            </ul>
+          </div>
+        </aside>
+        <aside id="zan_latest_comments-2">
+          <div class="panel panel-zan hidden-xs">
+            <div class="panel-heading">
+              <i class="fa fa-comments"></i> 最新评论 <i
+            class="fa fa-times-circle panel-remove"></i> <i
+            class="fa fa-chevron-circle-up panel-toggle"></i>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><span class="author-avatar"><img
+              alt="" src="./blogcss/9836b1265103ed08e9860b9baabd8eae"
+              class="avatar avatar-40 photo" height="40" width="40"></span> <span
+              class="comment-log"> <a
+              href="#">
+                你好！请问下位置首页文章表情下的阅读全文数量一直为0 能帮我看下吗谢谢！ 我的... </a>
+								</span></li>
+            </ul>
+          </div>
+        </aside>
+        <aside id="zan_sets-2">
+          <div class="panel  panel-zan hidden-xs">
+            <ul class="nav nav-pills pills-zan">
+              <li class="active"><a
+              href="#"
+              data-toggle="tab">分类目录</a></li>
+              <li><a href="#"
+                     data-toggle="tab">热门标签</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active nav bs-sidenav fade in"
+                   id="sidebar-categories">
+                <li class="cat-item cat-item-21"><a
+                href="#">Bootstrap3</a>
+                </li>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </aside>
     </div>
 
-
   </div>
-
 </div>
-
 
 <%= render(:partial=>'footer') %>
 
