@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :queryArticles
 
   def queryArticles
-    @articles = Article.paginate(:page => params[:page], :per_page => 2).order(updated_at: :desc)
+    @articles = Article.paginate(:page => params[:page], :per_page => 5).order(updated_at: :desc)
   end
 
 end
