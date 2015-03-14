@@ -121,9 +121,6 @@ GEM
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
-    omniauth-digitalocean (0.1.0)
-      omniauth (~> 1.0)
-      omniauth-oauth2 (~> 1.0)
     omniauth-github (1.1.2)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
@@ -254,7 +251,6 @@ DEPENDENCIES
   jquery-rails
   less-rails
   omniauth
-  omniauth-digitalocean
   omniauth-github
   pg
   rails (= 4.2.0)

@@ -13,7 +13,6 @@ gem 'coderay'
 gem 'therubyracer'
 gem 'devise'
 gem 'omniauth'
-gem 'omniauth-digitalocean'
 gem 'omniauth-github'
 gem 'rails_admin', '~> 0.6.6'
 
