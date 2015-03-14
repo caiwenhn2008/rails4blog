@@ -6,13 +6,166 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body id="sink">
-
+<body class="home blog nav-fixed">
 <%= render(:partial=>'header') %>
 
-<div class="demo container">
-  <%= render(:partial=>'menu') %>
-  <%= yield %>
+
+<div id="zan-bodyer">
+  <div class="container">
+
+    <div class="row">
+      <div id="mainstay" class="col-md-8">
+
+        <div class="well fade in">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          欢迎来到Wilson的个人博客 <i class="fa fa-smile-o"></i>
+        </div>
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+          <!-- 轮播（Carousel）指标 -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+          <!-- 轮播（Carousel）项目 -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <%= image_tag("car_1.jpg", size: "750x300", alt: "car1", class:"attachment-full wp-post-image") %>
+            </div>
+            <div class="item">
+              <%= image_tag("car_2.jpg", size: "750x300", alt: "car2", class:"attachment-full wp-post-image") %>
+            </div>
+            <div class="item">
+              <%= image_tag("car_3.jpg", size: "750x300", alt: "car3", class:"attachment-full wp-post-image") %>
+            </div>
+          </div>
+          <!-- 轮播（Carousel）导航 -->
+          <a class="carousel-control left" href="#myCarousel"
+             data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myCarousel"
+             data-slide="next">&rsaquo;</a>
+        </div>
+
+        <% @articles.each do |article| %>
+            <div id="article-list">
+              <div class="article well clearfix">
+                <i class="fa fa-bookmark article-stick visible-md visible-lg"></i>
+                <div class="data-article hidden-xs">
+                  <span class="month">9月</span> <span class="day">13</span>
+                </div>
+
+                <section class="hidden-xs">
+                  <div class="title-article">
+                    <h1>
+                      <%= link_to article.title, article_path(article),id: "myTitle" %>
+                    </h1>
+                  </div>
+                  <div class="tag-article">
+									<span class="label label-zan"><i class="fa fa-tags"></i>
+										<a
+                                        href="#"
+                                        rel="category tag">rails</a></span> <span class="label label-zan"><i
+                  class="fa fa-user"></i><i class="fa fa-eye"></i> 5,572</span>
+                  </div>
+                  <div class="content-article">
+                    <div class="alert alert-zan">
+                      <%= markdown(article.text.truncate(100).html_safe) %>
+                    </div>
+                  </div>
+                  <a class="btn btn-danger pull-right read-more"
+                     href="#"
+                     title="详细阅读 Zanblog 更新至V2.1.0">阅读全文 <span class="badge">6</span></a>
+                </section>
+
+              </div>
+
+            </div>
+            <!-- 内容主体结束 -->
+        <% end %>
+        <!-- 分页 -->
+        <div id="zan-page" class="clearfix">
+          <ul class="pagination pagination-zan pull-right">
+            <li></li>
+            <li class="active"><span>1</span></li>
+            <li><a href="#">»</a></li>
+          </ul>
+        </div>
+        <!-- 分页结束 -->
+
+      </div>
+
+      <aside class="col-md-4" id="sidebar">
+        <%= yield %>
+        <aside id="zan_search-2">
+          <div class="search">
+            <form class="form-inline clearfix" method="get" id="searchform"
+                  action="http://www.yeahzan.com/zanblog">
+              <input class="form-control" type="text" name="s" id="s"
+                     placeholder="搜索...">
+              <button type="submit" class="btn btn-danger btn-small"
+                      name="submit">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+          </div>
+        </aside>
+        <aside id="zan_hotest_posts-2">
+          <div class="panel panel-zan hot hidden-xs">
+            <div class="panel-heading">
+              <i class="fa fa-fire"></i> 最热文章 <i
+            class="fa fa-times-circle panel-remove"></i> <i
+            class="fa fa-chevron-circle-up panel-toggle"></i>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><span class="post-title">
+										<a href="#"
+                                           title="Zanblog 2.0.7（稳定版）更新"> Zanblog 2.0.7（稳定版）更新 </a>
+								</span> <span class="badge">29,716</span></li>
+            </ul>
+          </div>
+        </aside>
+        <aside id="zan_latest_comments-2">
+          <div class="panel panel-zan hidden-xs">
+            <div class="panel-heading">
+              <i class="fa fa-comments"></i> 最新评论 <i
+            class="fa fa-times-circle panel-remove"></i> <i
+            class="fa fa-chevron-circle-up panel-toggle"></i>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><span class="author-avatar"><img
+              alt="" src="./blogcss/9836b1265103ed08e9860b9baabd8eae"
+              class="avatar avatar-40 photo" height="40" width="40"></span> <span
+              class="comment-log"> <a
+              href="#">
+                你好！请问下位置首页文章表情下的阅读全文数量一直为0 能帮我看下吗谢谢！ 我的... </a>
+								</span></li>
+            </ul>
+          </div>
+        </aside>
+        <aside id="zan_sets-2">
+          <div class="panel  panel-zan hidden-xs">
+            <ul class="nav nav-pills pills-zan">
+              <li class="active"><a
+              href="#"
+              data-toggle="tab">分类目录</a></li>
+              <li><a href="#"
+                     data-toggle="tab">热门标签</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active nav bs-sidenav fade in"
+                   id="sidebar-categories">
+                <li class="cat-item cat-item-21"><a
+                href="#">Bootstrap3</a>
+                </li>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </aside>
+    </div>
+
+  </div>
 </div>
 
 <%= render(:partial=>'footer') %>
