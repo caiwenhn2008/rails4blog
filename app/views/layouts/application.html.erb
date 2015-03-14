@@ -56,6 +56,7 @@
                 </div>
 
                 <section class="hidden-xs">
+
                   <div class="title-article">
                     <h1>
                       <%= link_to article.title, article_path(article),id: "myTitle" %>
@@ -69,6 +70,7 @@
                   class="fa fa-user"></i><i class="fa fa-eye"></i> 5,572</span>
                   </div>
                   <div class="content-article">
+                    <figure class="thumbnail"><a href="http://www.yeahzan.com/zanblog/archives/575.html"><img width="750" height="300" src="http://www.yeahzan.com/zanblog/wp-content/uploads/2013/09/car_6.jpg" class="attachment-full wp-post-image" alt="car_6"></a></figure>
                     <div class="alert alert-zan">
                       <%= markdown(article.text.truncate(100).html_safe) %>
                     </div>
@@ -84,11 +86,10 @@
             <!-- 内容主体结束 -->
         <% end %>
         <!-- 分页 -->
+
         <div id="zan-page" class="clearfix">
           <ul class="pagination pagination-zan pull-right">
-            <li></li>
-            <li class="active"><span>1</span></li>
-            <li><a href="#">»</a></li>
+            <%= will_paginate @articles , :style => 'color:blue'%>
           </ul>
         </div>
         <!-- 分页结束 -->

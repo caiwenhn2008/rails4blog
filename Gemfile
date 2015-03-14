@@ -4,7 +4,9 @@ source 'https://rubygems.org'
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 
-gem 'will_paginate', '~> 3.0.6'
+#gem 'will_paginate', '~> 3.0.6'
+gem 'bootstrap-will_paginate'
+
 gem 'redcarpet'
 gem 'coderay'
 
