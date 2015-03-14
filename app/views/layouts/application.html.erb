@@ -69,9 +69,16 @@
                                         rel="category tag">rails</a></span> <span class="label label-zan"><i
                   class="fa fa-user"></i><i class="fa fa-eye"></i> 5,572</span>
                   </div>
+
+                  <figure class="thumbnail hidden-xs"><img width="750" height="300" src="http://www.yeahzan.com/zanblog/wp-content/uploads/2013/09/car_6.jpg" class="attachment-full wp-post-image" alt="car_6"></figure>
+
                   <div class="content-article">
-                    <div class="alert alert-zan">
-                      <%= markdown(article.text.truncate(200).html_safe) %>
+                    <div class="alert alert-info">
+
+                      <blockquote>
+                        <%= markdown(article.text.truncate(200).html_safe) %>
+                      </blockquote>
+
                     </div>
                   </div>
                   <a class="btn btn-danger pull-right read-more"
