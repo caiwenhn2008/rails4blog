@@ -36,6 +36,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     currentViewCount = @article.view_count || 0
 
+    logger.info "currentViewCount: " + currentViewCount.to_s
     @article.update(view_count: currentViewCount+1)
   end
 

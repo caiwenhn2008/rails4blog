@@ -44,7 +44,7 @@
 										<a
                                         href="#"
                                         rel="category tag">rails</a></span> <span class="label label-zan"><i
-          class="fa fa-user"></i><i class="fa fa-eye"></i> 5,572</span>
+          class="fa fa-user"></i><i class="fa fa-eye"></i> <%= article.view_count%></span>
           </div>
 
 
@@ -55,7 +55,7 @@
           </div>
 
           <%= link_to  article_path(article), class: "btn btn-danger pull-right read-more" do %>
-              阅读全文<span class="badge">6</span>
+              阅读全文<span class="badge"><%= article.view_count%></span>
           <%end%>
         </section>
 
