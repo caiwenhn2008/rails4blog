@@ -27,6 +27,20 @@
             class="dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-676"><a><i
         class="fa fa-cog"></i> Wilson's BLog</a>
         </li>
+
+        <% if user_signed_in? %>
+            <li id="menu-item-676"
+                class="dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-676"><a><i
+            class="fa fa-user"></i> 欢迎你 <%= current_user.email %></a>
+            </li>
+            <li id="menu-item-676"
+                class="dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-676">
+              <%= link_to  destroy_user_session_path, method: :delete, class: "ui item" do %>
+                  <i class= "fa fa-sign-out"></i>注销
+              <%end%>
+            </li>
+        <% else %>
+        <% end %>
     </nav>
   </div>
   <div id="if-fixed" class="pull-right visible-lg visible-md">
