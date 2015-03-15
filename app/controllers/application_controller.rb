@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
     else
       @articles = Article.paginate(:page => params[:page], :per_page => 5).order(updated_at: :desc)
     end
+    @hot_comments = Comment.order(updated_at: :desc).limit(5)
   end
 
 end

@@ -49,10 +49,14 @@
             class="fa fa-chevron-circle-up panel-toggle"></i>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><span class="post-title">
-										<a href="#"
-                                           title="Java中的并发">Java中的并发</a>
-								</span> <span class="badge">29,716</span></li>
+              <% @hot_comments.each do |comment| %>
+                  <li class="list-group-item">
+                    <span class="post-title">
+                        <a href="#" title="Java中的并发"><%= comment.body%></a>
+                    </span>
+                    <span class="badge">29,716</span>
+                  </li>
+              <% end %>
             </ul>
           </div>
         </aside>
@@ -64,11 +68,16 @@
             class="fa fa-chevron-circle-up panel-toggle"></i>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><span class="author-avatar"></span> <span
-              class="comment-log"> <a
-              href="#">
-                你好！请问下位置首页文章表情下的阅读全文数量一直为0 能帮我看下吗谢谢！ 我的... </a>
-								</span></li>
+
+              <% @hot_comments.each do |comment| %>
+                  <li class="list-group-item"><span class="author-avatar"></span>
+                    <span class="comment-log">
+                        <%= link_to article_path(comment.article), id: "myTitle" do %>
+                        <%= comment.body%>...
+                        <% end %>
+                    </span></li>
+              <% end %>
+
             </ul>
           </div>
         </aside>
