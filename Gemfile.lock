@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: https://ruby.taobao.org/
   specs:
     actionmailer (4.2.0)
       actionpack (= 4.2.0)
@@ -49,6 +49,7 @@ GEM
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
+    cancancan (1.10.1)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -202,6 +203,7 @@ GEM
     remotipart (1.2.1)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    rolify (4.0.0)
     safe_yaml (1.0.4)
     sass (3.4.13)
     sass-rails (5.0.1)
@@ -259,6 +261,7 @@ DEPENDENCIES
   acts-as-taggable-on (~> 3.4)
   bootstrap-will_paginate
   byebug
+  cancancan (~> 1.10)
   coderay
   coffee-rails (~> 4.1.0)
   devise
@@ -274,6 +277,7 @@ DEPENDENCIES
   rails_12factor
   rails_admin (~> 0.6.6)
   redcarpet
+  rolify
   sdoc (~> 0.4.0)
   spring
   sqlite3

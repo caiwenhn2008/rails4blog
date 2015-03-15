@@ -1,6 +1,8 @@
-#source 'https://ruby.taobao.org/'
-source 'https://rubygems.org'
+source 'https://ruby.taobao.org/'
+#source 'https://rubygems.org'
 
+gem 'rolify'
+gem 'cancancan', '~> 1.10'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"

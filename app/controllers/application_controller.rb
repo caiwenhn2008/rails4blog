@@ -22,4 +22,14 @@ class ApplicationController < ActionController::Base
     @hot_articles = Article.order(view_count: :desc).limit(5)
   end
 
+  def after_sign_in_path_for(resource)
+    if resource.is_a?(User)
+      if User.count == 1
+        resource.add_role 'admin'
+      end
+      resource
+    end
+    root_path
+  end
+
 end

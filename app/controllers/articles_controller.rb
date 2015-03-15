@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  load_and_authorize_resource
   layout 'blog'
 
   def index
