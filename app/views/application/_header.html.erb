@@ -37,6 +37,14 @@
                 class="dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-676"><a><i
             class="fa fa-user"></i> 欢迎你 <%= current_user.email %></a>
             </li>
+
+            <li id="menu-item-676"
+                class="dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-676">
+              <%= link_to  "/admin", class: "fa fa-user-md",title:"admin" do %>
+                  后台管理
+              <%end%>
+            </li>
+
             <li id="menu-item-676"
                 class="dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-676">
               <%= link_to  destroy_user_session_path, method: :delete, class: "ui item" do %>
@@ -45,6 +53,8 @@
             </li>
         <% else %>
         <% end %>
+
+
     </nav>
   </div>
   <div id="if-fixed" class="pull-right visible-lg visible-md">
