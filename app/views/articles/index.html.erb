@@ -40,11 +40,17 @@
             </h1>
           </div>
           <div class="tag-article">
-									<span class="label label-zan"><i class="fa fa-tags"></i>
-										<a
-                                        href="#"
-                                        rel="category tag">rails</a></span> <span class="label label-zan"><i
-          class="fa fa-user"></i><i class="fa fa-eye"></i> <%= article.view_count%></span>
+            <span class="label label-zan">
+
+              <% article.tag_list.each do |info_tag| %>
+                <i class="fa fa-tags"></i>
+                <span><a href="#" rel="category tag"><%= info_tag %>  </a></span>
+              <% end %>
+
+              <span class="label label-zan">
+              <i class="fa fa-user"></i><i class="fa fa-eye"></i>
+             <%= article.view_count%>
+            </span>
           </div>
 
 

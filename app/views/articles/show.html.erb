@@ -34,6 +34,10 @@
 								<span class="label label-zan"><i class="fa fa-tags"></i>
 									9-21</span>
 
+      <% @article.tag_list.each do |info_tag| %>
+          <span> <i class="fa fa-tags"></i><%= info_tag %> </span>
+      <% end %>
+
     </div>
   </div>
 

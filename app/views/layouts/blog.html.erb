@@ -88,16 +88,17 @@
             <ul class="nav nav-pills pills-zan">
               <li class="active"><a
               href="#"
-              data-toggle="tab">分类目录</a></li>
-              <li><a href="#"
-                     data-toggle="tab">热门标签</a></li>
+              data-toggle="tab">热门标签</a></li>
+              <li></li>
             </ul>
             <div class="tab-content">
               <div class="tab-pane active nav bs-sidenav fade in"
                    id="sidebar-categories">
-                <li class="cat-item cat-item-21"><a
-                href="#">Rails4 (to be continued...)</a>
-                </li>
+                <% ActsAsTaggableOn::Tag.most_used.each do |tag| %>
+                    <li class="cat-item cat-item-21">
+                      <a href="/articles?tag=<%= tag %>"><%= tag %></a>
+                    </li>
+                <% end %>
               </div>
             </div>
           </div>

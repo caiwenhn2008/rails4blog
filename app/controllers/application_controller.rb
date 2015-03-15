@@ -7,9 +7,13 @@ class ApplicationController < ActionController::Base
 
   def queryArticles
     @key_word = params[:key_word]
+    @tag = params[:tag]
+
     if (@key_word)
       @articles  = Article.where("text like ? or title like ?", "%" + params[:key_word] + "%", "%" + params[:key_word] + "%").order(updated_at: :desc).paginate(:page => params[:page], :per_page => 5)
       p @articles
+    elsif(@tag)
+      @articles = Article.tagged_with(@tag).paginate(:page => params[:page], :per_page => 5)
     else
       @articles = Article.paginate(:page => params[:page], :per_page => 5).order(updated_at: :desc)
     end

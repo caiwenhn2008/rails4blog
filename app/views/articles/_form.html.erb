@@ -22,6 +22,14 @@
         <%= f.text_field :title, size:120 %>
       </div>
     </div>
+
+    <div class="control-group" style="margin-top: 10px">
+      <label class="control-label" for="inputEmail"><i class="fa fa-paperclip"></i>标签（*多个标签以","隔开）</label>
+      <div class="controls">
+        <%= f.text_field :tag_list,:size=>'120' %>
+      </div>
+    </div>
+
     <div class="control-group" style="margin-top: 10px">
       <label class="control-label" for="inputEmail"><i class="fa fa-list-alt"></i>正文(支持Markdown)</label>
       <div class="controls">
