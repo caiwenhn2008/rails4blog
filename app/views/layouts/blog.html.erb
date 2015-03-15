@@ -17,11 +17,16 @@
 
     <div class="row">
       <div id="mainstay" class="col-md-8">
+        <div class="well fade in">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          欢迎来到Wilson的个人博客 <i class="fa fa-smile-o"></i>
+          <%= link_to "发帖", new_article_path, class:"btn btn-success" %>
+        </div>
+
         <%= yield %>
       </div>
 
       <aside class="col-md-4" id="sidebar">
-
         <aside id="zan_search-2">
           <div class="search">
             <form class="form-inline clearfix" method="get" id="searchform"
@@ -36,6 +41,8 @@
           </div>
         </aside>
         <aside id="zan_hotest_posts-2">
+
+
           <div class="panel panel-zan hot hidden-xs">
             <div class="panel-heading">
               <i class="fa fa-fire"></i> 最热文章 <i
@@ -45,7 +52,7 @@
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><span class="post-title">
 										<a href="#"
-                                           title="Zanblog 2.0.7（稳定版）更新"> Zanblog 2.0.7（稳定版）更新 </a>
+                                           title="Java中的并发">Java中的并发</a>
 								</span> <span class="badge">29,716</span></li>
             </ul>
           </div>
@@ -79,7 +86,7 @@
               <div class="tab-pane active nav bs-sidenav fade in"
                    id="sidebar-categories">
                 <li class="cat-item cat-item-21"><a
-                href="#">Bootstrap3</a>
+                href="#">Rails4</a>
                 </li>
               </div>
             </div>

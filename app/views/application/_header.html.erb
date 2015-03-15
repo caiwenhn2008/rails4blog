@@ -20,9 +20,13 @@
     <nav class="navbar-collapse bs-navbar-collapse collapse">
       <ul id="menu-navbar" class="nav navbar-nav">
         <li id="menu-item-215"
-            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-215"><a
-        title="Zanblog首页" href="#"><i
-        class="fa fa-home"></i> 首页</a></li>
+            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-215">
+
+          <%= link_to  articles_path, class: "fa fa-home",title:"首页" do %>
+              首页
+          <%end%>
+
+        </li>
         <li id="menu-item-676"
             class="dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-676"><a><i
         class="fa fa-cog"></i> Wilson's BLog</a>
