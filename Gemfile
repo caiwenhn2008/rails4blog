@@ -14,6 +14,9 @@ gem 'therubyracer'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'omniauth-qq'
+gem 'omniauth-weibo-oauth2'
+
 gem 'rails_admin', '~> 0.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
