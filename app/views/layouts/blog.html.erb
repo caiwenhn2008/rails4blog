@@ -49,12 +49,14 @@
             class="fa fa-chevron-circle-up panel-toggle"></i>
             </div>
             <ul class="list-group list-group-flush">
-              <% @hot_comments.each do |comment| %>
+              <% @hot_articles.each do |article| %>
                   <li class="list-group-item">
                     <span class="post-title">
-                        <a href="#" title="Java中的并发"><%= comment.body%></a>
+                       <%= link_to article_path(article), id: "myTitle" do %>
+                            <%= article.title%>
+                        <% end %>
                     </span>
-                    <span class="badge">29,716</span>
+                    <span class="badge"><%= article.view_count%></span>
                   </li>
               <% end %>
             </ul>

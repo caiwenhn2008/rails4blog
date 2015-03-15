@@ -34,7 +34,9 @@ class ArticlesController < ApplicationController
   end
   def show
     @article = Article.find(params[:id])
+    currentViewCount = @article.view_count || 0
 
+    @article.update(view_count: currentViewCount+1)
   end
 
   def destroy
