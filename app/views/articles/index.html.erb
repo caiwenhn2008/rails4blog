@@ -59,9 +59,10 @@
                 <%= markdown(article.text.truncate(200).html_safe) %>
               </blockquote>
           </div>
-          <a class="btn btn-danger pull-right read-more"
-             href="#"
-             title="详细阅读 Zanblog 更新至V2.1.0">阅读全文 <span class="badge">6</span></a>
+
+          <%= link_to  article_path(article), class: "btn btn-danger pull-right read-more" do %>
+              阅读全文<span class="badge">6</span>
+          <%end%>
         </section>
 
       </div>

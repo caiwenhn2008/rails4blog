@@ -1,7 +1,7 @@
 <%= link_to articles_path do %>
-    <i class="reply all icon"></i>返回文章列表
+    <i class="fa fa-mail-reply"></i>返回文章列表
 <%end%>
-<%= form_for @article do |f| %>
+<%= form_for @article,class:"form-horizontal" do |f| %>
     <% if @article.errors.any? %>
         <div id="error_explanation">
           <h2>
@@ -16,18 +16,25 @@
         </div>
     <% end %>
 
-    <p>
-      <%= f.label :title, "标题" %><br>
-      <%= f.text_field :title %>
-    </p>
+    <div class="control-group" style="margin-top: 10px">
+      <label class="control-label" for="inputEmail"><i class="fa fa-paperclip"></i>标题</label>
+      <div class="controls">
+        <%= f.text_field :title %>
+      </div>
+    </div>
+    <div class="control-group" style="margin-top: 10px">
+      <label class="control-label" for="inputEmail"><i class="fa fa-list-alt"></i>正文(支持Markdown)</label>
+      <div class="controls">
+        <%= f.text_area :text,rows:"30", cols:"120" %>
+      </div>
+    </div>
 
-    <p>
-      <%= f.label :text,"正文" %><br>
-      <%= f.text_area :text %>
-    </p>
-
-    <p>
-      <%= f.submit "发布", class: "ui green button"%>
-    </p>
+    <div class="control-group" style="margin-top: 10px">
+      <div class="controls">
+        <%= f.submit "发布", class: "btn btn-primary"%>
+      </div>
+    </div>
 
 <% end %>
+
+

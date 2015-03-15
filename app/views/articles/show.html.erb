@@ -8,6 +8,19 @@
         博客
     <%end%>/
     <%= @article.title %>
+
+    <div style="float: right">
+
+    <%= link_to  edit_article_path(@article), class: "home" do %>
+        <i class="fa fa-tags"></i>编辑
+    <%end%>
+
+    <%= link_to article_path(@article),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } do %>
+        <i class="fa fa-minus-square"></i>'删除'
+    <%end%>
+    </div>
   </div>
   <!-- 面包屑结束 -->
 
@@ -20,6 +33,7 @@
     <div class="tag-article container">
 								<span class="label label-zan"><i class="fa fa-tags"></i>
 									9-21</span>
+
     </div>
   </div>
 
