@@ -3,7 +3,7 @@
   <!-- 面包屑 -->
   <div class="breadcrumb">
     <i class="fa fa-hom		e"></i>
-    <!-- Breadcrumb NavXT 4.4.0 -->
+
     <%= link_to  articles_path, class: "home" do %>
         博客
     <%end%>/
@@ -38,14 +38,14 @@
   </div>
 
   <div class="centent-article">
-    <figure class="thumbnail hidden-xs"><img width="750" height="300" src="http://www.yeahzan.com/zanblog/wp-content/uploads/2013/09/car_6.jpg" class="attachment-full wp-post-image" alt="car_6"></figure>
+    <figure class="thumbnail hidden-xs"><%= image_tag("car_3.jpg", size: "750x300", alt: "car3", class:"attachment-full wp-post-image") %></figure>
 
     <p> <%= markdown(@article.text.html_safe) %></p>
     <!-- 分页 -->
     <div class="zan-page bs-example">
       <ul class="pager">
-        <li class="previous"><a href="http://www.yeahzan.com/zanblog/archives/531.html" rel="prev">上一篇</a></li>
-        <li class="next"><a href="http://www.yeahzan.com/zanblog/archives/575.html" rel="next">下一篇</a></li>
+        <li class="previous"><a href="#" rel="prev">上一篇</a></li>
+        <li class="next"><a href="#" rel="next">下一篇</a></li>
       </ul>
     </div>
     <!-- 分页 -->
