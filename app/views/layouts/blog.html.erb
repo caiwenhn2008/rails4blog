@@ -29,15 +29,14 @@
       <aside class="col-md-4" id="sidebar">
         <aside id="zan_search-2">
           <div class="search">
-            <form class="form-inline clearfix" method="get" id="searchform"
-                  action="http://www.yeahzan.com/zanblog">
-              <input class="form-control" type="text" name="s" id="s"
-                     placeholder="搜索...">
-              <button type="submit" class="btn btn-danger btn-small"
-                      name="submit">
-                <i class="fa fa-search"></i>
-              </button>
-            </form>
+
+            <%= form_tag '/articles', method: 'get', class:"form-inline clearfix", id:"searchform"  do %>
+                <%= text_field_tag :key_word, @key_word, class:"form-control", placeholder:"搜索..." %>
+                <button id="search-button" class="btn btn-danger btn-small"
+                        name="submit"> <i class="fa fa-search"></i></button>
+            <% end %>
+
+
           </div>
         </aside>
         <aside id="zan_hotest_posts-2">

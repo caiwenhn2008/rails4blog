@@ -29,7 +29,7 @@
       <div class="article well clearfix">
         <i class="fa fa-bookmark article-stick visible-md visible-lg"></i>
         <div class="data-article hidden-xs">
-          <span class="month">9月</span> <span class="day">13</span>
+          <span class="month"><%= article.created_at.strftime("%m") %>月</span> <span class="day"><%= article.created_at.strftime("%d") %></span>
         </div>
 
         <section class="hidden-xs">

@@ -6,7 +6,13 @@ class ApplicationController < ActionController::Base
   before_action :queryArticles
 
   def queryArticles
-    @articles = Article.paginate(:page => params[:page], :per_page => 5).order(updated_at: :desc)
+    @key_word = params[:key_word]
+    if (@key_word)
+      @articles  = Article.where("text like ? or title like ?", "%" + params[:key_word] + "%", "%" + params[:key_word] + "%").order(updated_at: :desc).paginate(:page => params[:page], :per_page => 5)
+      p @articles
+    else
+      @articles = Article.paginate(:page => params[:page], :per_page => 5).order(updated_at: :desc)
+    end
   end
 
 end
