@@ -32,6 +32,12 @@
         class="fa fa-cog"></i> Wilson's BLog</a>
         </li>
 
+        <li id="menu-item-676">
+            <%= link_to  "/articles.rss", class: "fa fa-rss",title:"RSS订阅" do %>
+                RSS订阅
+            <%end%>
+        </li>
+
         <% if user_signed_in? %>
             <li id="menu-item-676"
                 class="dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-676"><a><i

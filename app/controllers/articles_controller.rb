@@ -3,6 +3,10 @@ class ArticlesController < ApplicationController
   layout 'blog'
 
   def index
+    respond_to do |format|
+      format.html
+      format.rss { @articles = Article.all() }
+    end
   end
 
   def new

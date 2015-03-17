@@ -1,0 +1,24 @@
+<<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wilsonsblog</title>
+    <description>蔡稳的博客</description>
+    <link>
+    https://wilsonsblog.herokuapp.com/</link>
+    <language>zh-CN</language>
+    <copyright>Copyright 2015, wilson.com</copyright>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <atom:link href="https://wilsonsblog.herokuapp.com/articles.rss" rel=" self " type="application/rss+xml"/>
+    <% @articles.each do |article| %>
+        <item>
+          <title><%= article.title %></title>
+          <description>
+            <![CDATA[ <%= article.text.html_safe %> ]]>
+          </description>
+          <pubDate><%= article.created_at.rfc822 %></pubDate>
+          <link><%= article_url(article) %></link>
+          <guid isPermaLink="false"><%= article_url(article) %></guid>
+        </item>
+    <% end %>
+  </channel>
+</rss>
