@@ -10,6 +10,7 @@ Rails4 Wordpress风格博客
 5. 基于acts-as-taggable-on的简单tag
 
 To Do List:
+
 1.加入其他插件如文件上传gem，WiceGrid，Settingslogic，simple_form， etc
 2.加上cache
 
@@ -17,7 +18,7 @@ Heroku demo 地址
 https://wilsonsblog.herokuapp.com
 
 基本界面
- ![image](https://github.com/caiwenhn2008/rails4blog/raw/master/app/assets/images/demo.png)
+ ![Aaron Swartz]](https://github.com/caiwenhn2008/rails4blog/raw/master/app/assets/images/demo.png)
 
 
 前台模板来自于
