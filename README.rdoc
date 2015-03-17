@@ -18,7 +18,7 @@ Heroku demo 地址
 https://wilsonsblog.herokuapp.com
 
 基本界面
-  ![image](https://github.com/caiwenhn2008/rails4blog/raw/master/app/assets/images/demo.png)
+  ![](https://github.com/caiwenhn2008/rails4blog/raw/master/app/assets/images/demo.png)
 
 
 前台模板来自于
