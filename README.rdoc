@@ -1,6 +1,8 @@
-### Rails4 Wordpress风格博客
+Rails4 Wordpress风格博客
+==========
 
-基本功能
+## 基本功能
+
 1. omniauth+devise+rolify 实现登陆/注册。。 和第三方登陆（github，qq，微博）-》 微博登陆只有我自己的测试账号
 2. 浏览/新建/.. 帖子
 3. 简单搜索，最新评论，浏览最多文章。。。
@@ -11,9 +13,6 @@ To Do List:
 1.加入其他插件如文件上传gem，WiceGrid，Settingslogic，simple_form， etc
 2.加上cache
 
-### Github地址（差点忘啦）,随便拷贝啊。。。
-https://github.com/caiwenhn2008/rails4blog
-
 ## Heroku demo 地址
 https://wilsonsblog.herokuapp.com
 
@@ -21,9 +20,11 @@ https://wilsonsblog.herokuapp.com
 ![](https://ruby-china-files.b0.upaiyun.com/photo/2015/51a1b6178f3b8e0bb6965c9bdbe3bc31.png)
 
 ## 前台模板来自于
+
 http://www.yeahzan.com/zanblog/
 
 ## 用到的rails4 Gem
+
 gem 'rolify'
 gem 'cancancan', '~> 1.10'
 gem 'acts-as-taggable-on', '~> 3.4'
