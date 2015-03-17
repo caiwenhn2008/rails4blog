@@ -3,12 +3,11 @@
   <channel>
     <title>wilsonsblog</title>
     <description>蔡稳的博客</description>
-    <link>
-    https://wilsonsblog.herokuapp.com/</link>
+    <link>http://wilsonsblog.herokuapp.com/</link>
     <language>zh-CN</language>
     <copyright>Copyright 2015, wilson.com</copyright>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
-    <atom:link href="https://wilsonsblog.herokuapp.com/articles.rss" rel=" self " type="application/rss+xml"/>
+    <atom:link href="http://wilsonsblog.herokuapp.com/articles.rss" rel=" self " type="application/rss+xml"/>
     <% @articles.each do |article| %>
         <item>
           <title><%= article.title %></title>
