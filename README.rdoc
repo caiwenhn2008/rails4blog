@@ -17,9 +17,13 @@ Heroku demo 地址
 https://wilsonsblog.herokuapp.com
 
 基本界面
-![](https://ruby-china-files.b0.upaiyun.com/photo/2015/51a1b6178f3b8e0bb6965c9bdbe3bc31.png)
+ ![image](https://github.com/caiwenhn2008/rails4blog/raw/master/app/asserts/images/demo.png)
 
-## 前台模板来自于
+https://ruby-china-files.b0.upaiyun.com/photo/2015/51a1b6178f3b8e0bb6965c9bdbe3bc31.png
+
+![create_post](/images/create_post.gif)
+
+前台模板来自于
 
 http://www.yeahzan.com/zanblog/
 
