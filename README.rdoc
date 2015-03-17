@@ -1,7 +1,7 @@
 Rails4 Wordpress风格博客
 ==========
 
-## 基本功能
+基本功能
 
 1. omniauth+devise+rolify 实现登陆/注册。。 和第三方登陆（github，qq，微博）-》 微博登陆只有我自己的测试账号
 2. 浏览/新建/.. 帖子
@@ -13,36 +13,14 @@ To Do List:
 1.加入其他插件如文件上传gem，WiceGrid，Settingslogic，simple_form， etc
 2.加上cache
 
-## Heroku demo 地址
+Heroku demo 地址
 https://wilsonsblog.herokuapp.com
 
-## 基本界面
+基本界面
 ![](https://ruby-china-files.b0.upaiyun.com/photo/2015/51a1b6178f3b8e0bb6965c9bdbe3bc31.png)
 
 ## 前台模板来自于
 
 http://www.yeahzan.com/zanblog/
 
-## 用到的rails4 Gem
-
-gem 'rolify'
-gem 'cancancan', '~> 1.10'
-gem 'acts-as-taggable-on', '~> 3.4'
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
-
-#gem 'will_paginate', '~> 3.0.6'
-gem 'bootstrap-will_paginate'
-
-gem 'redcarpet'
-gem 'coderay'
-
-gem 'therubyracer'
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-github'
-gem 'omniauth-qq'
-gem 'omniauth-weibo-oauth2'
-
-gem 'rails_admin', '~> 0.6.6'
 
