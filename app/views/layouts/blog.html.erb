@@ -19,7 +19,7 @@
       <div id="mainstay" class="col-md-8">
         <div class="well fade in">
           <button type="button" class="close" data-dismiss="alert">×</button>
-          欢迎来到Wilson的个人博客 <i class="fa fa-smile-o"></i>
+          <%= image_tag(current_user.avatar.url(:normal)) if current_user.avatar %>欢迎来到Wilson的个人博客 <i class="fa fa-smile-o"></i>
           <%= link_to "发帖", new_article_path, class:"btn btn-success" %>
         </div>
 

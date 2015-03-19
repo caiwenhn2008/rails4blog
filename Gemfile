@@ -1,6 +1,8 @@
-source 'https://ruby.taobao.org/'
-#source 'https://rubygems.org'
+#source 'https://ruby.taobao.org/'
+source 'https://rubygems.org'
 
+gem 'mini_magick'
+gem 'carrierwave'
 gem 'rolify'
 gem 'cancancan', '~> 1.10'
 gem 'acts-as-taggable-on', '~> 3.4'
