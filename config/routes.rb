@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsSettingsUi::Engine, at: 'settings'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 

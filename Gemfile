@@ -1,5 +1,11 @@
-#source 'https://ruby.taobao.org/'
-source 'https://rubygems.org'
+source 'https://ruby.taobao.org/'
+#source 'https://rubygems.org'
+
+gem 'rails-settings-ui', '~> 0.3.0'
+
+gem "rails-settings-cached", "0.4.1"
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 
 gem 'mini_magick'
 gem 'carrierwave'
@@ -8,9 +14,6 @@ gem 'cancancan', '~> 1.10'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
-
-#gem 'will_paginate', '~> 3.0.6'
-gem 'bootstrap-will_paginate'
 
 gem 'redcarpet'
 gem 'coderay'

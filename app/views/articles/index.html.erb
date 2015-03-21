@@ -74,7 +74,7 @@
 
 <div id="zan-page" class="clearfix">
   <ul class="pagination pagination-zan pull-right">
-    <%= will_paginate @articles , :style => 'color:blue'%>
+    <%= paginate @articles, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination-sm"%>
   </ul>
 </div>
 <!-- 分页结束 -->

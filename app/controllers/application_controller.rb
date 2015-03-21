@@ -11,16 +11,15 @@ class ApplicationController < ActionController::Base
     @tag = params[:tag]
 
     if (@key_word)
-      @articles  = Article.where("text like ? or title like ?", "%" + params[:key_word] + "%", "%" + params[:key_word] + "%").order(updated_at: :desc).paginate(:page => params[:page], :per_page => 5)
-      p @articles
+      @articles  = Article.where("text like ? or title like ?", "%" + params[:key_word] + "%", "%" + params[:key_word] + "%").order(updated_at: :desc).page(params[:page]).per(Settings.page_size)
     elsif(@tag)
-      @articles = Article.tagged_with(@tag).paginate(:page => params[:page], :per_page => 5)
+      @articles = Article.tagged_with(@tag).page(params[:page]).per(Settings.page_size)
     else
-      @articles = Article.paginate(:page => params[:page], :per_page => 5).order(updated_at: :desc)
+      @articles = Article.page(params[:page]).per(Settings.page_size).order(updated_at: :desc)
     end
-    @hot_comments = Comment.order(updated_at: :desc).limit(5)
+    @hot_comments = Comment.order(updated_at: :desc).limit(Settings.hot_comments_size)
 
-    @hot_articles = Article.order(view_count: :desc).limit(5)
+    @hot_articles = Article.order(view_count: :desc).limit(Settings.hot_articles_size)
   end
 
   def after_sign_in_path_for(resource)

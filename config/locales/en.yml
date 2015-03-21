@@ -21,3 +21,11 @@
 
 en:
   hello: "Hello world"
+  settings:
+    attributes:
+      page_size: # setting name
+        name: '分页【每页文章数】'
+      hot_comments_size:
+        name: '热门评论数量'
+      hot_articles_size:
+        name: '热门文章数量'
