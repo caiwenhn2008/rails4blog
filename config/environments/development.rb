@@ -50,8 +50,8 @@ Rails.application.configure do
         port: 25,
         domain: "163.com",
         authentication: :login,
-        user_name: "caiwenhn2008",
-        password: "Metlife0510!"
+        user_name: "***",
+        password: "***"
     }
 
 end
