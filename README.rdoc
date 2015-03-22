@@ -1,28 +1,8 @@
-Rails4[Wordpress风格博客]
+Rails4[Wordpress Style BLog]
 ==========
 
-基本功能
-
-1. omniauth+devise+rolify 实现登陆/注册。。 和第三方登陆（github，qq，微博）-》 微博登陆只有我自己的测试账号
-2. 浏览/新建/.. 帖子
-3. 简单搜索，最新评论，浏览最多文章。。。
-4. rails admin简单后台管理
-5. 基于acts-as-taggable-on的简单tag
-
-To Do List:
-
-1. 加入其他插件如文件上传gem，WiceGrid，Settingslogic，simple_form， etc
-2. apply cache
-
-Heroku demo 地址
-https://wilsonsblog.herokuapp.com
-
-基本界面
-![demo](https://github.com/caiwenhn2008/rails4blog/raw/master/app/assets/images/demo.png)
+Detail Introduction: https://ruby-china.org/topics/24666
 
 
-前台模板来自于
-
-http://www.yeahzan.com/zanblog/
-
-
+Heroku Demo Link:
+https://wilsonsblog.herokuapp.com/
