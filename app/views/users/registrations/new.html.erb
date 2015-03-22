@@ -1,35 +1,34 @@
-<h2>Sign up</h2>
+<aside id="zan_login-2">
+  <div class="panel panel-zan">
+    <div class="panel-heading">请注册</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}) do |f| %>
-  <%= devise_error_messages! %>
+    <div style="padding: 10px">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}, html: { class: 'form-horizontal' },
+                          wrapper: :horizontal_form,
+                          wrapper_mappings: {
+                                  check_boxes: :horizontal_radio_and_checkboxes,
+                                  radio_buttons: :horizontal_radio_and_checkboxes,
+                                  file: :horizontal_file_input,
+                                  boolean: :horizontal_boolean
+                          } ) do |f| %>
+          <%= f.error_notification %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+          <%= f.input :email, autofocus: true %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+          <% if @validatable %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+          <%= f.input :password, autocomplete: "off" %>
 
+          <%= f.input :password_confirmation, autocomplete: "off" %>
 
-    <div class="field">
-      <%= f.label :avatar %><br />
-      <%= f.file_field :avatar%><br />
-      <%= f.hidden_field :avatar_cache%>
+          <%= f.input :avatar%><br />
+          <%= f.hidden_field :avatar_cache%>
+
+          <%= f.button :submit, class:"btn btn-success", value:"创建" %>
+      <% end %>
     </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
   </div>
-<% end %>
-
+  </div>
+</aside>

@@ -1,0 +1,33 @@
+en:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: 'required'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "问题来啦，请重新输入!"
+    labels:
+       defaults:
+         password: '密码'
+         password_confirmation: '确认密码'
+
+       user:
+         new:
+           email: '邮件地址'
+           avatar: '头像'
+         edit:
+           email: 'E-mail.'
+    hints:
+       defaults:
+         username: 'User name to sign in.'
+         password: '*请不要输入特殊字符'
+    include_blanks:
+       defaults:
+         age: 'Rather not say'
+    prompts:
+       defaults:
+         age: 'Select your age'

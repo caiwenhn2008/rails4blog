@@ -1,6 +1,7 @@
 source 'https://ruby.taobao.org/'
 #source 'https://rubygems.org'
 
+gem 'simple_form'
 gem 'rails-settings-ui', '~> 0.3.0'
 
 gem "rails-settings-cached", "0.4.1"
