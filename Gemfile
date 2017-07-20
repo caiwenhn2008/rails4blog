@@ -15,6 +15,7 @@ gem 'cancancan', '~> 1.10'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+gem 'rucaptcha'
 
 gem 'redcarpet'
 gem 'coderay'
@@ -76,7 +77,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
+  # gem 'pg'
   gem 'rails_12factor'
 end
 
