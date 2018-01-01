@@ -6,7 +6,7 @@ workers 2
 
 app_name = 'rails4blog'
 
-application_path = "/Users/i336871/rails/#{app_name}"
+application_path = "#{ENV["rails_app_home"]}/#{app_name}"
 
 directory "#{application_path}"
 
